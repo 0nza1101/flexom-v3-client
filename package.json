@@ -1,7 +1,7 @@
 {
-  "name": "my-ts-lib",
+  "name": "@0nza1101/flexom-v3-client",
   "version": "0.0.0",
-  "description": "My awesome typescript library",
+  "description": "Node.js library to interact with the Flexom V3 API",
   "type": "module",
   "publishConfig": {
     "access": "public"

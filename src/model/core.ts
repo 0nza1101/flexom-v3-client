@@ -47,7 +47,8 @@ export type FlexomService = {
     fetchEvent: (eventId: string) => Promise<Event[]>;
 };
 
-export interface FlexomApiError extends Error {
-    errorCode: string;
-    error: string;
+export class FlexomApiClientError extends Error {
+    constructor(msg: string) {
+        super(`[flexom-api-client] ERROR: (${msg})`);
+    }
 }

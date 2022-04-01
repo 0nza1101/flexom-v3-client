@@ -46,6 +46,9 @@ jobs:
 
             # Runs a set of commands using the runners shell
             - name: Build and Test
+              env:
+                  FLEXOM_USERNAME: ${{ secrets.FLEXOM_USERNAME }}
+                  FLEXOM_PASSWORD: ${{ secrets.FLEXOM_PASSWORD }}
               run: pnpm test
 
     release:
