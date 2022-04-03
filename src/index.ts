@@ -7,6 +7,7 @@ export function createFlexomClient(username: string, password: string): FlexomCl
     const service = createFlexomService([
         async (response, retryWithMergedOptions) => {
             if (response.statusCode === 401) {
+                console.log('Unauthorized, trying to login...');
                 await service.logout();
                 await service.login(username, password);
                 return retryWithMergedOptions(got.defaults.options);

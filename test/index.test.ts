@@ -8,3 +8,13 @@ test('Create Flexom v3 client', () => {
     );
     expect(client).toBeTruthy();
 });
+
+test('Create client and retreive setup', async () => {
+    const client = createFlexomClient(
+        process.env.FLEXOM_USERNAME!,
+        process.env.FLEXOM_PASSWORD!
+    );
+    const setup = await client.getSetup();
+    expect(client).toBeTruthy();
+    expect(setup).toBeTruthy();
+});
