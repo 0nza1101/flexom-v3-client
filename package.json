@@ -15,6 +15,10 @@
     "flexom",
     "flexom-v3"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/0nza1101/flexom-v3-client.git"
+  },
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
