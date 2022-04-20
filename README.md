@@ -9,6 +9,7 @@ Flexom V3 API client
   <a href="https://www.npmjs.com/package/@0nza1101/flexom-v3-client"><img src="https://img.shields.io/npm/v/@0nza1101%2Fflexom-v3-client?color=6495ED&label="></a>
 <p>
 <br>
+
 ```bash
 npm install @0nza1101/flexom-v3-client --save
 ```
