@@ -5,7 +5,7 @@
         "strict": true,
         "esModuleInterop": true,
         "moduleResolution": "node",
-        "types": ["vite/client", "vitest/global"],
+        "types": ["vite/client", "vitest/globals"],
         "skipLibCheck": true,
         "noUnusedLocals": true,
         "noImplicitAny": true,

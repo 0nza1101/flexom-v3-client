@@ -1,5 +1,5 @@
 import { got } from 'got';
-import { FlexomApiClientError, FlexomService } from './model';
+import { FlexomService } from './model';
 import { createFlexomService } from './service';
 
 export type FlexomClient = Omit<FlexomService, 'login' | 'logout'> & { disconnect: FlexomService['logout'] };
@@ -16,12 +16,12 @@ export function createFlexomClient(username: string, password: string): FlexomCl
         },
     ]);
 
-    function catchError<T extends unknown[], U>(fn: (...args: T) => Promise<U>) {
+    /*function catchError<T extends unknown[], U>(fn: (...args: T) => Promise<U>) {
         return (...args: T) =>
             fn(...args).catch(error => {
                 throw new FlexomApiClientError(error);
             });
-    }
+    }*/
 
     return {
         getMainAccount: service.getMainAccount,

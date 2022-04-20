@@ -9,6 +9,12 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "typescript",
+    "client",
+    "flexom",
+    "flexom-v3"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "exports": {
