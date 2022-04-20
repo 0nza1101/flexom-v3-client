@@ -6,7 +6,7 @@ specifiers:
   got: 12.0.3
   prettier: 2.6.2
   tough-cookie: ^4.0.0
-  tsup: 5.12.3
+  tsup: 5.12.5
   typescript: 4.6.3
   utility-types: ^3.10.0
   vite: 2.9.1
@@ -21,7 +21,7 @@ dependencies:
 devDependencies:
   '@types/tough-cookie': 4.0.1
   prettier: 2.6.2
-  tsup: 5.12.3_typescript@4.6.3
+  tsup: 5.12.5_typescript@4.6.3
   typescript: 4.6.3
   vite: 2.9.1
   vitest: 0.8.4
@@ -1099,8 +1099,8 @@ packages:
     resolution: {integrity: sha512-Y/arvbn+rrz3JCKl9C4kVNfTfSm2/mEp5FSz5EsZSANGPSlQrpRI5M4PKF+mJnE52jOO90PnPSc3Ur3bTQw0gA==}
     dev: true
 
-  /tsup/5.12.3_typescript@4.6.3:
-    resolution: {integrity: sha512-H1NANXhG01koKC5DWblNiPzsIwFBzGDvoEdxR1jrlNcWN0ydIEMsPhafrz5mhLNrYFn2suGlOwYZWfJO0HIPEg==}
+  /tsup/5.12.5_typescript@4.6.3:
+    resolution: {integrity: sha512-lKwzJsB49sDto51QjqOB4SdiBLKRvgTymEBuBCovcksdDwFEz3esrkbf3m497PXntUKVTzcgOfPdTgknMtvufw==}
     hasBin: true
     peerDependencies:
       typescript: ^4.1.0
