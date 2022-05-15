@@ -1,20 +1,15 @@
-import { got } from 'got';
 import { FlexomService } from './model';
 import { createFlexomService } from './service';
 
 export type FlexomClient = Omit<FlexomService, 'login' | 'logout'> & { disconnect: FlexomService['logout'] };
 export function createFlexomClient(username: string, password: string): FlexomClient {
-    const service = createFlexomService([
-        async (response, retryWithMergedOptions) => {
-            if (response.statusCode === 401) {
-                console.log('Unauthorized, trying to login...');
-                await service.logout();
-                await service.login(username, password);
-                return retryWithMergedOptions(got.defaults.options);
-            }
-            return response;
+    const service = createFlexomService(
+        async () => {
+            console.log('Unauthorized, trying to login...');
+            await service.logout();
+            await service.login(username, password);
         },
-    ]);
+    );
 
     /*function catchError<T extends unknown[], U>(fn: (...args: T) => Promise<U>) {
         return (...args: T) =>

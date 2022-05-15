@@ -1,6 +1,8 @@
-import got, { AfterResponseHook } from 'got';
-import { CookieJar } from 'tough-cookie';
-import { FlexomService, ActionGroup, ExecApplyRequest } from './model';
+import axios, { AxiosInstance } from 'axios';
+import * as retryAxios from 'retry-axios';
+import NodeFormData from 'form-data';
+import { isNode } from "browser-or-node";
+import { FlexomService, ActionGroup, ExecApplyRequest, Authorization } from './model';
 
 /**
  * The API Client Service.
@@ -8,19 +10,26 @@ import { FlexomService, ActionGroup, ExecApplyRequest } from './model';
  * @returns {FlexomService}
  */
 export function createFlexomService(
-    afterResponseHook?: AfterResponseHook[]
+    retry?: () => Promise<void>
 ): FlexomService {
-    const cookieJar = new CookieJar();
-    const httpClient = got.extend({
-        prefixUrl: 'https://ha108-1.overkiz.com/',
+    const client: AxiosInstance = axios.create({
+        baseURL: 'https://ha108-1.overkiz.com/',
         headers: {
             'User-Agent': 'Flexom/139 CFNetwork/1312 Darwin/21.0.0',
         },
-        cookieJar,
-        hooks: {
-            afterResponse: afterResponseHook,
-        },
+        withCredentials: true,
     });
+    client.defaults.raxConfig = {
+        retry: 1,
+        instance: client,
+        statusCodesToRetry: [[401, 401]],
+        onRetryAttempt: async err => {
+            if (retry) {
+                await retry();
+            }
+        }
+    };
+    retryAxios.attach(client);
 
     /**
      * Root endpoints
@@ -31,46 +40,42 @@ export function createFlexomService(
         username: string,
         password: string
     ) => {
-        return await httpClient
-            .post('enduser-mobile-web/enduserAPI/login', {
-                form: {
-                    userId: username,
-                    userPassword: password,
-                },
-            })
-            .json();
+        const formData = isNode ? new NodeFormData() : new FormData();
+        formData.append("userId", username);
+        formData.append("userPassword", password);
+        const { data, headers } = await client
+            .post<Authorization>('enduser-mobile-web/enduserAPI/login', formData);
+        (client.defaults.headers as any).Cookie = headers['set-cookie']
+        return data;
     };
 
     const logout: FlexomService['logout'] = async () => {
-        return await httpClient.post('enduser-mobile-web/enduserAPI/logout').json();
+        const { data } = await client.post<{ logout: boolean }>('enduser-mobile-web/enduserAPI/logout');
+        return data;
     };
 
     const getActionGroups: FlexomService['getActionGroups'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/actionGroups')
-            .json();
+        const { data } = await client.get<ActionGroup[]>('enduser-mobile-web/enduserAPI/actionGroups')
+        return data;
     };
 
     const getActionGroup: FlexomService['getActionGroup'] = async (
         oid: string
     ) => {
-        return await httpClient
-            .get(`enduser-mobile-web/enduserAPI/actionGroups/${oid}`)
-            .json();
+        const { data } = await client.get(`enduser-mobile-web/enduserAPI/actionGroups/${oid}`)
+        return data;
     };
 
     const updateActionGroup: FlexomService['updateActionGroup'] = async (
         actionGroup: ActionGroup
     ) => {
-        return await httpClient
-            .put(`enduser-mobile-web/enduserAPI/actionGroups`, {
-                json: actionGroup,
-            })
-            .json();
+        const { data } = await client.put(`enduser-mobile-web/enduserAPI/actionGroups`, actionGroup);
+        return data;
     };
 
     const getHistory: FlexomService['getHistory'] = async () => {
-        return await httpClient.get('enduser-mobile-web/enduserAPI/history').json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/history');
+        return data;
     };
 
     /**
@@ -79,22 +84,19 @@ export function createFlexomService(
      */
 
     const getMainAccount: FlexomService['getMainAccount'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/enduser/mainAccount')
-            .json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/enduser/mainAccount');
+        return data;
     };
 
     const getSecondaryAccounts: FlexomService['getSecondaryAccounts'] =
         async () => {
-            return await httpClient
-                .get('enduser-mobile-web/enduserAPI/enduser/secondaryAccounts')
-                .json();
+            const { data } = await client.get('enduser-mobile-web/enduserAPI/enduser/secondaryAccounts');
+            return data;
         };
 
     const getPreferences: FlexomService['getPreferences'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/enduser/preferences')
-            .json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/enduser/preferences');
+        return data;
     };
 
     /**
@@ -103,27 +105,25 @@ export function createFlexomService(
      */
 
     const getSetup: FlexomService['getSetup'] = async () => {
-        return await httpClient.get('enduser-mobile-web/enduserAPI/setup').json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/setup');
+        return data;
     };
 
     const getGateways: FlexomService['getGateways'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/setup/gateways')
-            .json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/setup/gateways');
+        return data;
     };
 
     const getGatewayVersion: FlexomService['getGatewayVersion'] = async (
         gatewayId: string
     ) => {
-        return await httpClient
-            .get(`enduser-mobile-web/enduserAPI/setup/gateway/${gatewayId}/version`)
-            .json();
+        const { data } = await client.get(`enduser-mobile-web/enduserAPI/setup/gateway/${gatewayId}/version`);
+        return data;
     };
 
     const getPlaces: FlexomService['getPlaces'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/setup/places')
-            .json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/setup/places');
+        return data;
     };
 
     const createPlace: FlexomService['createPlace'] = async ({
@@ -131,69 +131,57 @@ export function createFlexomService(
         type,
         label,
     }) => {
-        return await httpClient
-            .post(
-                `enduser-mobile-web/enduserAPI/setup/places/${rootPlaceId}/subPlaces`,
-                { json: { type, label } }
-            )
-            .json();
+        const { data } = await client.post(`enduser-mobile-web/enduserAPI/setup/places/${rootPlaceId}/subPlaces`, { type, label })
+        return data;
     };
 
     const deletePlace: FlexomService['deletePlace'] = async (
         placedId: string
     ) => {
-        return await httpClient
-            .delete(`enduser-mobile-web/enduserAPI/setup/places/${placedId}`)
-            .json();
+        const { data } = await client.delete(`enduser-mobile-web/enduserAPI/setup/places/${placedId}`)
+        return data;
     };
 
     const getDevices: FlexomService['getDevices'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/setup/devices')
-            .json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/setup/devices')
+        return data
     };
 
     const getDevice: FlexomService['getDevice'] = async (deviceURL: string) => {
-        return await httpClient
-            .get(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}`)
-            .json();
+        const { data } = await client.get(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}`)
+        return data
     };
 
     const relocateDevice: FlexomService['relocateDevice'] = async (
         deviceURL: string,
         placeId: string
     ) => {
-        return await httpClient
-            .put(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}/relocate/${placeId}`)
-            .json();
+        const { data } = await client.put(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}/relocate/${placeId}`);
+        return data
     };
 
     const renameDevice: FlexomService['renameDevice'] = async (
         deviceURL: string,
         name: string
     ) => {
-        return await httpClient
-            .put(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}/${name}`)
-            .json();
+        const { data } = await client.put(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}/${name}`)
+        return data
     };
 
     const getDuskTime: FlexomService['getDuskTime'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/setup/duskTime')
-            .json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/setup/duskTime')
+        return data
     };
 
     const getDawnTime: FlexomService['getDawnTime'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/setup/dawnTime')
-            .json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/setup/dawnTime')
+        return data
     };
 
     const getThirdpartyActivated: FlexomService['getThirdpartyActivated'] =
         async () => {
-            return await httpClient
-                .get('enduser-mobile-web/enduserAPI/setup/thirdparty/activated')
-                .json();
+            const { data } = await client.get('enduser-mobile-web/enduserAPI/setup/thirdparty/activated')
+            return data
         };
 
     /**
@@ -202,17 +190,15 @@ export function createFlexomService(
      */
 
     const getCurrentExec: FlexomService['getCurrentExec'] = async () => {
-        return await httpClient
-            .get('enduser-mobile-web/enduserAPI/exec/current')
-            .json();
+        const { data } = await client.get('enduser-mobile-web/enduserAPI/exec/current')
+        return data
     };
 
     const applyExec: FlexomService['applyExec'] = async (
         request: ExecApplyRequest
     ) => {
-        return await httpClient
-            .post('enduser-mobile-web/enduserAPI/exec/apply', { json: request })
-            .json();
+        const { data } = await client.post('enduser-mobile-web/enduserAPI/exec/apply', request)
+        return data
     };
 
     /**
@@ -221,15 +207,13 @@ export function createFlexomService(
      */
 
     const registerEvent: FlexomService['registerEvent'] = async () => {
-        return await httpClient
-            .post('enduser-mobile-web/enduserAPI/events/register')
-            .json();
+        const { data } = await client.post('enduser-mobile-web/enduserAPI/events/register')
+        return data
     };
 
     const fetchEvent: FlexomService['fetchEvent'] = async (eventId: string) => {
-        return await httpClient
-            .post(`enduser-mobile-web/enduserAPI/events/${eventId}/fetch`)
-            .json();
+        const { data } = await client.post(`enduser-mobile-web/enduserAPI/events/${eventId}/fetch`)
+        return data
     };
 
     return {
