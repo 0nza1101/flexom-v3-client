@@ -1,4 +1,4 @@
-import { got } from 'got';
+import got from 'got';
 import { FlexomService } from './model';
 import { createFlexomService } from './service';
 
