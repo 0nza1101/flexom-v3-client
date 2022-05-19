@@ -31,6 +31,7 @@
     },
     "types": "./dist/index.d.ts",
     "scripts": {
+        "pack": "pnpm run build --out-dir ./dist/dist && shx cp package.json ./dist/ && npm pack ./dist",
         "build-fast": "tsup src/index.ts --minify --format cjs,esm",
         "build": "pnpm run build-fast --dts-resolve",
         "test": "vitest run --reporter verbose",
@@ -41,6 +42,7 @@
     "devDependencies": {
         "@types/tough-cookie": "^4.0.2",
         "prettier": "2.6.2",
+        "shx": "^0.3.4",
         "tsup": "5.12.8",
         "typescript": "4.6.4",
         "vite": "2.9.9",
