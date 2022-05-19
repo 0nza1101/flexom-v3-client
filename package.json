@@ -12,7 +12,9 @@
         "typescript",
         "client",
         "flexom",
-        "flexom-v3"
+        "flexom-v3",
+        "overkizz",
+        "nodejs"
     ],
     "repository": {
         "type": "git",
