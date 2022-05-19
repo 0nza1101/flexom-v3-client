@@ -29,30 +29,29 @@
   },
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build-fast": "tsup src/index.ts --format cjs,esm",
-    "build": "pnpm run build-fast -- --dts-resolve",
+    "package": "pnpm build --out-dir ./dist/dist/ && shx cp package.json ./dist/ && npm pack ./dist",
+    "build-fast": "tsup src/index.ts --format cjs,esm --clean",
+    "build": "pnpm build-fast --dts-resolve",
     "test": "vitest run --reporter verbose",
     "format": "npx prettier --write .",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm build"
   },
   "license": "MIT",
   "devDependencies": {
-    "@types/tough-cookie": "^4.0.1",
     "prettier": "2.6.2",
-    "tsup": "5.12.5",
-    "typescript": "4.6.3",
-    "vite": "2.9.1",
-    "vitest": "0.8.4"
+    "shx": "^0.3.4",
+    "tsup": "5.12.8",
+    "typescript": "4.6.4",
+    "vite": "2.9.9",
+    "vitest": "0.12.6"
   },
   "dependencies": {
     "axios": "^0.27.2",
     "browser-or-node": "^2.0.0",
-    "cross-fetch": "^3.1.5",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.1",
     "form-data": "^4.0.0",
-    "got": "12.0.3",
-    "retry-axios": "^3.0.0",
-    "tough-cookie": "^4.0.0",
-    "utility-types": "^3.10.0"
+    "formdata-node": "^4.3.2",
+    "form-data-encoder": "^1.7.2",
+    "retry-axios": "^3.0.0"
   }
 }

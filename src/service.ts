@@ -1,7 +1,8 @@
 import axios, { AxiosInstance } from 'axios';
 import * as retryAxios from 'retry-axios';
-import NodeFormData from 'form-data';
-import { isNode } from "browser-or-node";
+import { Readable } from "stream"
+import { FormData } from "formdata-node";
+import { FormDataEncoder } from "form-data-encoder"
 import { FlexomService, ActionGroup, ExecApplyRequest, Authorization } from './model';
 
 /**
@@ -40,11 +41,12 @@ export function createFlexomService(
         username: string,
         password: string
     ) => {
-        const formData = isNode ? new NodeFormData() : new FormData();
+        const formData = new FormData();
         formData.append("userId", username);
         formData.append("userPassword", password);
+        const encoder = new FormDataEncoder(formData);
         const { data, headers } = await client
-            .post<Authorization>('enduser-mobile-web/enduserAPI/login', formData);
+            .post<Authorization>('enduser-mobile-web/enduserAPI/login', Readable.from(encoder), { headers: encoder.headers });
         (client.defaults.headers as any).Cookie = headers['set-cookie']
         return data;
     };
