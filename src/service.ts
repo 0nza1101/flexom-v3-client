@@ -42,7 +42,9 @@ export function createFlexomService(
     };
 
     const logout: FlexomService['logout'] = async () => {
-        return await httpClient.post('enduser-mobile-web/enduserAPI/logout').json();
+        return await httpClient
+            .post('enduser-mobile-web/enduserAPI/logout')
+            .json();
     };
 
     const getActionGroups: FlexomService['getActionGroups'] = async () => {
@@ -70,7 +72,9 @@ export function createFlexomService(
     };
 
     const getHistory: FlexomService['getHistory'] = async () => {
-        return await httpClient.get('enduser-mobile-web/enduserAPI/history').json();
+        return await httpClient
+            .get('enduser-mobile-web/enduserAPI/history')
+            .json();
     };
 
     /**
@@ -103,7 +107,9 @@ export function createFlexomService(
      */
 
     const getSetup: FlexomService['getSetup'] = async () => {
-        return await httpClient.get('enduser-mobile-web/enduserAPI/setup').json();
+        return await httpClient
+            .get('enduser-mobile-web/enduserAPI/setup')
+            .json();
     };
 
     const getGateways: FlexomService['getGateways'] = async () => {
@@ -116,7 +122,9 @@ export function createFlexomService(
         gatewayId: string
     ) => {
         return await httpClient
-            .get(`enduser-mobile-web/enduserAPI/setup/gateway/${gatewayId}/version`)
+            .get(
+                `enduser-mobile-web/enduserAPI/setup/gateway/${gatewayId}/version`
+            )
             .json();
     };
 
@@ -155,7 +163,11 @@ export function createFlexomService(
 
     const getDevice: FlexomService['getDevice'] = async (deviceURL: string) => {
         return await httpClient
-            .get(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}`)
+            .get(
+                `enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(
+                    deviceURL
+                )}`
+            )
             .json();
     };
 
@@ -164,7 +176,11 @@ export function createFlexomService(
         placeId: string
     ) => {
         return await httpClient
-            .put(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}/relocate/${placeId}`)
+            .put(
+                `enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(
+                    deviceURL
+                )}/relocate/${placeId}`
+            )
             .json();
     };
 
@@ -173,7 +189,11 @@ export function createFlexomService(
         name: string
     ) => {
         return await httpClient
-            .put(`enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(deviceURL)}/${name}`)
+            .put(
+                `enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(
+                    deviceURL
+                )}/${name}`
+            )
             .json();
     };
 

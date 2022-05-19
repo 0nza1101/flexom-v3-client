@@ -4,7 +4,7 @@ import {
     Authorization,
     Preference,
     SecondaryAccount,
-    History
+    History,
 } from './account';
 import { Event, EventRegister } from './event';
 import { Exec, ExecApplyRequest } from './exec';

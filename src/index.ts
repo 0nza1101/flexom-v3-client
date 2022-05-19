@@ -2,8 +2,13 @@ import { got } from 'got';
 import { FlexomService } from './model';
 import { createFlexomService } from './service';
 
-export type FlexomClient = Omit<FlexomService, 'login' | 'logout'> & { disconnect: FlexomService['logout'] };
-export function createFlexomClient(username: string, password: string): FlexomClient {
+export type FlexomClient = Omit<FlexomService, 'login' | 'logout'> & {
+    disconnect: FlexomService['logout'];
+};
+export function createFlexomClient(
+    username: string,
+    password: string
+): FlexomClient {
     const service = createFlexomService([
         async (response, retryWithMergedOptions) => {
             if (response.statusCode === 401) {
@@ -49,6 +54,5 @@ export function createFlexomClient(username: string, password: string): FlexomCl
         getCurrentExec: service.getCurrentExec,
         applyExec: service.applyExec,
         disconnect: service.logout,
-    }
+    };
 }
-
