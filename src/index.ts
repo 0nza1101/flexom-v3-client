@@ -2,7 +2,7 @@ import got from 'got';
 import { FlexomService } from './model';
 import { createFlexomService } from './service';
 
-export type FlexomClient = Omit<FlexomService, 'login' | 'logout'> & {
+export type FlexomClient = Omit<FlexomService, 'logout'> & {
     disconnect: FlexomService['logout'];
 };
 
@@ -30,6 +30,7 @@ export function createFlexomClient(
     }*/
 
     return {
+        login: service.login,
         getMainAccount: service.getMainAccount,
         getSecondaryAccounts: service.getSecondaryAccounts,
         getPreferences: service.getPreferences,
