@@ -5,6 +5,7 @@ import { createFlexomService } from './service';
 export type FlexomClient = Omit<FlexomService, 'login' | 'logout'> & {
     disconnect: FlexomService['logout'];
 };
+
 export function createFlexomClient(
     username: string,
     password: string
@@ -56,3 +57,5 @@ export function createFlexomClient(
         disconnect: service.logout,
     };
 }
+
+export * from './model';

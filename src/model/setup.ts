@@ -20,7 +20,7 @@ export type Setup = {
     features: any[];
 };
 
-type Location = {
+export type Location = {
     creationTime: number;
     lastUpdateTime: number;
     city: string;

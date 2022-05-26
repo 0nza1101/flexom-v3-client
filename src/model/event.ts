@@ -11,7 +11,7 @@ export type Event = {
     name: EventType;
 };
 
-enum EventType {
+export enum EventType {
     EVENT_ACTION_GROUP_CREATED = 'ActionGroupCreatedEvent',
     EVENT_ACTION_GROUP_UPDATED = 'ActionGroupUpdatedEvent',
     ACTION_GROUP_DELETED = 'ActionGroupDeletedEvent',
