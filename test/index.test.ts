@@ -1,7 +1,7 @@
 import { test, expect } from 'vitest';
 import { createFlexomClient } from '../src';
 
-test('Create Flexom v3 client', () => {
+test('create Flexom v3 client', () => {
     const client = createFlexomClient(
         process.env.FLEXOM_USERNAME!,
         process.env.FLEXOM_PASSWORD!
@@ -9,7 +9,7 @@ test('Create Flexom v3 client', () => {
     expect(client).toBeTruthy();
 });
 
-test('Create client and connect', async () => {
+test('create client and connect', async () => {
     const client = createFlexomClient(
         process.env.FLEXOM_USERNAME!,
         process.env.FLEXOM_PASSWORD!
@@ -20,7 +20,7 @@ test('Create client and connect', async () => {
 });
 
 
-test('Create client and retreive setup', async () => {
+test('create client and retreive setup', async () => {
     const client = createFlexomClient(
         process.env.FLEXOM_USERNAME!,
         process.env.FLEXOM_PASSWORD!

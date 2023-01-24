@@ -3,7 +3,14 @@ import { FlexomService } from './model';
 import { createFlexomService } from './service';
 
 export type FlexomClient = Omit<FlexomService, 'logout' | 'login'> & {
+    /**
+     *  Login with previously entered credentials
+     */
     connect: () => ReturnType<FlexomService['login']>;
+
+    /**
+     * Disconnect
+     */
     disconnect: FlexomService['logout'];
 };
 

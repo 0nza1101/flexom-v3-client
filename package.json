@@ -1,52 +1,52 @@
 {
-  "name": "@0nza1101/flexom-v3-client",
-  "version": "0.0.0",
-  "description": "Node.js library to interact with the Flexom V3 API",
-  "publishConfig": {
-    "access": "public"
-  },
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "typescript",
-    "client",
-    "flexom",
-    "flexom-v3",
-    "overkizz",
-    "nodejs"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/0nza1101/flexom-v3-client.git"
-  },
-  "type": "module",
-  "exports": "./dist/index.js",
-  "engines": {
-    "node": ">=14.16"
-  },
-  "types": "./dist/index.d.ts",
-  "scripts": {
-    "package": "pnpm run build --out-dir ./dist/dist && shx cp package.json ./dist/ && npm pack ./dist",
-    "build-fast": "tsup src/index.ts --minify --format esm",
-    "build": "pnpm run build-fast --dts-resolve",
-    "test": "vitest run --reporter verbose",
-    "format": "npx prettier --write .",
-    "prepublishOnly": "pnpm run build"
-  },
-  "license": "MIT",
-  "devDependencies": {
-    "@types/tough-cookie": "^4.0.2",
-    "prettier": "2.7.1",
-    "shx": "^0.3.4",
-    "tsup": "6.2.3",
-    "typescript": "4.8.2",
-    "vite": "3.1.0",
-    "vitest": "0.23.1"
-  },
-  "dependencies": {
-    "dotenv": "^16.0.2",
-    "got": "12.4.1",
-    "tough-cookie": "^4.1.2"
-  }
+    "name": "@0nza1101/flexom-v3-client",
+    "version": "0.0.0",
+    "description": "Node.js library to interact with the Flexom V3 API",
+    "publishConfig": {
+        "access": "public"
+    },
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "typescript",
+        "client",
+        "flexom",
+        "flexom-v3",
+        "overkizz",
+        "nodejs"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/0nza1101/flexom-v3-client.git"
+    },
+    "type": "module",
+    "exports": "./dist/index.js",
+    "engines": {
+        "node": ">=14.16"
+    },
+    "types": "./dist/index.d.ts",
+    "scripts": {
+        "package": "pnpm run build --out-dir ./dist/dist && shx cp package.json ./dist/ && npm pack ./dist",
+        "build-fast": "tsup src/index.ts --minify --format esm",
+        "build": "pnpm run build-fast --dts-resolve",
+        "test": "vitest run --reporter verbose",
+        "format": "npx prettier --write .",
+        "prepublishOnly": "pnpm run build"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "got": "^12.5.3",
+        "tough-cookie": "^4.1.2"
+    },
+    "devDependencies": {
+        "@types/tough-cookie": "^4.0.2",
+        "prettier": "^2.8.3",
+        "shx": "^0.3.4",
+        "tsup": "^6.5.0",
+        "typescript": "^4.8.2",
+        "vite": "^4.0.4",
+        "vitest": "^0.28.1"
+    }
 }
