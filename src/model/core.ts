@@ -1,22 +1,17 @@
 import {
     Account,
-    ActionGroup,
     Authorization,
     Preference,
     SecondaryAccount,
     History,
 } from './account';
+import { ActionGroup } from './action';
+import { Device } from './device';
 import { Event, EventRegister } from './event';
 import { Exec, ExecApplyRequest } from './exec';
-import {
-    CreatePlaceRequest,
-    Device,
-    Gateway,
-    Place,
-    Setup,
-    ThirdPartyActivated,
-    Timezone,
-} from './setup';
+import { Gateway } from './gateway';
+import { Place, CreatePlaceRequest } from './place';
+import { Setup, ThirdPartyActivated, Timezone } from './setup';
 
 export type FlexomService = {
     /**
@@ -25,7 +20,6 @@ export type FlexomService = {
      *  @param {string} password - Flexom v3 password
      */
     login: (username: string, password: string) => Promise<Authorization>;
-
 
     /**
      *  Disconnect from Flexom v3
@@ -66,7 +60,6 @@ export type FlexomService = {
 
     /**
      *  Retreive executions history
-     *  @returns {Promise<{ execution: History[] }>}
      */
     getHistory: () => Promise<{ execution: History[] }>;
 

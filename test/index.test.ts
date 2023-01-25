@@ -19,7 +19,6 @@ test('create client and connect', async () => {
     expect(auth.success).toBeTruthy();
 });
 
-
 test('create client and retreive setup', async () => {
     const client = createFlexomClient(
         process.env.FLEXOM_USERNAME!,

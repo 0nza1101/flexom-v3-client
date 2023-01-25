@@ -82,7 +82,6 @@ export function createFlexomService(
      * enduser-mobile-web/enduserAPI/enduser/
      */
 
-
     const getMainAccount: FlexomService['getMainAccount'] = async () => {
         return await httpClient
             .get('enduser-mobile-web/enduserAPI/enduser/mainAccount')
