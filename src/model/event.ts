@@ -5,9 +5,6 @@ export type EventRegister = {
 export type Event = {
     timestamp: number;
     setupOID: string;
-    actionGroupOID: string;
-    actionGroupLabel: string;
-    metadata: string;
     name: EventType;
 };
 

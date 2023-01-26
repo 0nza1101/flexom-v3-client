@@ -57,6 +57,7 @@ export function createFlexomClient(
         relocateDevice: service.relocateDevice,
         getPlaces: service.getPlaces,
         createPlace: service.createPlace,
+        updatePlace: service.updatePlace,
         deletePlace: service.deletePlace,
         registerEvent: service.registerEvent,
         fetchEvent: service.fetchEvent,

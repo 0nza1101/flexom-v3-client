@@ -147,6 +147,19 @@ export function createFlexomService(
             .json();
     };
 
+    const updatePlace: FlexomService['updatePlace'] = async ({
+        placeOID,
+        type,
+        label,
+    }) => {
+        return await httpClient
+            .put(
+                `enduser-mobile-web/enduserAPI/setup/places/${placeOID}`,
+                { json: { type, label } }
+            )
+            .json();
+    };
+
     const deletePlace: FlexomService['deletePlace'] = async (
         placedId: string
     ) => {
@@ -272,6 +285,7 @@ export function createFlexomService(
         renameDevice,
         relocateDevice,
         createPlace,
+        updatePlace,
         deletePlace,
         login,
         logout,

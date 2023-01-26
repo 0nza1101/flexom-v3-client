@@ -10,7 +10,7 @@ import { Device } from './device';
 import { Event, EventRegister } from './event';
 import { Exec, ExecApplyRequest } from './exec';
 import { Gateway } from './gateway';
-import { Place, CreatePlaceRequest } from './place';
+import { Place, CreatePlaceRequest, UpdatePlaceRequest } from './place';
 import { Setup, ThirdPartyActivated, Timezone } from './setup';
 
 export type FlexomService = {
@@ -27,14 +27,16 @@ export type FlexomService = {
     logout: () => Promise<{ logout: boolean }>;
 
     /**
-     *  Get the main account informations
+     *  Get the main account informations. \
+     *  The main account is the account you currently use to request this ressource in case of a secondary account.
      */
     getMainAccount: () => Promise<Account>;
 
     /**
-     *  Retreive all secondary accounts
+     *  Retreive all secondary accounts. \
+     *  If you use this request with a secondary account you will get yours full detail and only others secondary accounts userIds
      */
-    getSecondaryAccounts: () => Promise<SecondaryAccount>;
+    getSecondaryAccounts: () => Promise<SecondaryAccount[]>;
 
     /**
      *  Retreive account preferences
@@ -61,7 +63,7 @@ export type FlexomService = {
     /**
      *  Retreive executions history
      */
-    getHistory: () => Promise<{ execution: History[] }>;
+    getHistory: () => Promise<History[]>;
 
     /**
      *  Retreive your whole setup (gateways, places, devices...)
@@ -74,7 +76,7 @@ export type FlexomService = {
     getGateways: () => Promise<Gateway[]>;
 
     /**
-     *  Get a specific gateway version
+     *  Get a specific gateway detailed version
      *  @param {string} gatewayId - Gateway ID
      */
     getGatewayVersion: (gatewayId: string) => Promise<string>;
@@ -87,14 +89,22 @@ export type FlexomService = {
     /**
      *  Given a rootPlaceId, a type & label it create a subplace
      *  @param {string} rootPlaceId - Root place ID
-     *  @param {string} type - Type of the place @see
+     *  @param {string} type - Type of the place
      *  @param {string} label - Name of the sub place
      */
     createPlace: (request: CreatePlaceRequest) => Promise<{ placeOID: string }>;
 
     /**
+     *  Update a place name and type
+     *  @param {string} placedOID - place OID
+     * @param {string} label - label
+     *  @param {string} type - type
+     */
+    updatePlace: (updatePlaceRequest: UpdatePlaceRequest) => Promise<void>;
+
+    /**
      *  Delete a subplace
-     *  @param {string} placedId - place ID
+     *  @param {string} placedOID - place OID
      */
     deletePlace: (placeOID: string) => Promise<void>;
 
@@ -139,7 +149,7 @@ export type FlexomService = {
     getThirdpartyActivated: () => Promise<ThirdPartyActivated>;
 
     /**
-     *  Retreive the current commands execution
+     *  Retrieves the current running commands
      */
     getCurrentExec: () => Promise<Exec[]>;
 

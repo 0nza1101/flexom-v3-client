@@ -50,6 +50,27 @@ test('create a flexom place', async () => {
     expect(newPlace?.label).equals('new place');
 });
 
+test('update a flexom place', async () => {
+    let places = await service.getPlaces();
+    const newPlaceId = (
+        await service.createPlace({
+            rootPlaceId: places.oid,
+            type: '201',
+            label: 'new place',
+        })
+    ).placeOID;
+    await service.updatePlace({
+        placeOID: newPlaceId,
+        type: '201',
+        label: 'new updated place'
+    });
+    places = await service.getPlaces();
+    const updatedPlace = places.subPlaces.find((p) => p.oid === newPlaceId);
+    await service.deletePlace(newPlaceId);
+    expect(updatedPlace).toBeTruthy();
+    expect(updatedPlace?.label).equals('new updated place');
+});
+
 test('delete a flexom place', async () => {
     let places = await service.getPlaces();
     const newPlaceId = (
@@ -104,7 +125,7 @@ test('rename flexom device', async () => {
     let device = await service.getDevice(devices[0].deviceURL);
     expect(devices[0].label).equal(device.label);
     const oldLabel = device.label;
-    const label = 'new label';
+    const label = 'new devicce label';
     await service.renameDevice(device.deviceURL, label);
     device = await service.getDevice(device.deviceURL);
     await service.renameDevice(device.deviceURL, oldLabel);
@@ -127,7 +148,7 @@ test('get flexom secondary accounts', async () => {
     expect(account).toBeTruthy();
 });
 
-test('get flexom scenarios', async () => {
+test('get flexom scenarios (action groups)', async () => {
     const actionGroups = await service.getActionGroups();
     expect(actionGroups).toBeTruthy();
 });
