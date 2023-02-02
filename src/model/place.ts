@@ -1,5 +1,14 @@
-/** TODO Find all place type numbers **/
-
+export enum PlaceType {
+    LIVING_ROOM = 14,
+    BATHROOM = 8,
+    BEDROOM = 5,
+    BABY_ROOM = 7,
+    KITCHEN = 1,
+    OFFICE = 16,
+    MEETING_ROOM = 3,
+    TOILET = 33,
+    APARTMENT = 201,
+}
 
 export type Place = {
     /**
@@ -20,7 +29,7 @@ export type Place = {
     /**
      * Place type number
      */
-    type: number;
+    type: PlaceType;
 
     /**
      * The place object identifier
@@ -40,7 +49,7 @@ export type CreatePlaceRequest = {
     rootPlaceId: string;
 
     /**
-     * Place type number reference the icon in the app. TODO : List all possible place type
+     * String representation of {@link PlaceType} value
      */
     type: string;
 
@@ -54,7 +63,7 @@ export type UpdatePlaceRequest = {
     /**
      * Place object identifier
      */
-    placeOID: string;
+    placeId: string;
 
     /**
     * The updated label of the place
@@ -62,7 +71,7 @@ export type UpdatePlaceRequest = {
     label: string;
 
     /**
-     * Place type number reference the icon in the app. TODO : List all possible place type
+     * String representation of {@link PlaceType} value
      */
     type: string;
 }

@@ -4,7 +4,6 @@ export type EventRegister = {
 
 export type Event = {
     timestamp: number;
-    setupOID: string;
     name: EventType;
 };
 

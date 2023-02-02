@@ -1,6 +1,7 @@
 import { test, beforeAll, expect } from 'vitest';
 import { createFlexomService } from '../src/service';
 import { FlexomService } from '../src/model/core';
+import { PlaceType } from '../src/model/place';
 
 let service!: FlexomService;
 
@@ -55,13 +56,13 @@ test('update a flexom place', async () => {
     const newPlaceId = (
         await service.createPlace({
             rootPlaceId: places.oid,
-            type: '201',
+            type: PlaceType.APARTMENT.toString(),
             label: 'new place',
         })
     ).placeOID;
     await service.updatePlace({
-        placeOID: newPlaceId,
-        type: '201',
+        placeId: newPlaceId,
+        type: PlaceType.APARTMENT.toString(),
         label: 'new updated place'
     });
     places = await service.getPlaces();
@@ -76,7 +77,7 @@ test('delete a flexom place', async () => {
     const newPlaceId = (
         await service.createPlace({
             rootPlaceId: places.oid,
-            type: '11',
+            type: PlaceType.MEETING_ROOM.toString(),
             label: 'new place',
         })
     ).placeOID;
@@ -110,7 +111,7 @@ test('relocate flexom device', async () => {
     const newPlaceId = (
         await service.createPlace({
             rootPlaceId: places.oid,
-            type: '201',
+            type: PlaceType.APARTMENT.toString(),
             label: 'relocate device new place',
         })
     ).placeOID;
@@ -125,7 +126,7 @@ test('rename flexom device', async () => {
     let device = await service.getDevice(devices[0].deviceURL);
     expect(devices[0].label).equal(device.label);
     const oldLabel = device.label;
-    const label = 'new devicce label';
+    const label = 'new device label';
     await service.renameDevice(device.deviceURL, label);
     device = await service.getDevice(device.deviceURL);
     await service.renameDevice(device.deviceURL, oldLabel);
