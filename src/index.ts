@@ -44,6 +44,8 @@ export function createFlexomClient(
         getActionGroup: service.getActionGroup,
         getActionGroups: service.getActionGroups,
         updateActionGroup: service.updateActionGroup,
+        createActionGroup: service.createActionGroup,
+        deleteActionGroup: service.deleteActionGroup,
         getHistory: service.getHistory,
         getSetup: service.getSetup,
         getGateways: service.getGateways,
@@ -63,6 +65,7 @@ export function createFlexomClient(
         fetchEvent: service.fetchEvent,
         getCurrentExec: service.getCurrentExec,
         applyExec: service.applyExec,
+        execActionGroup: service.execActionGroup,
         disconnect: service.logout,
     };
 }

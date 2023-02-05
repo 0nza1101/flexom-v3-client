@@ -5,7 +5,7 @@ import {
     SecondaryAccount,
     History,
 } from './account';
-import { ActionGroup } from './action';
+import { ActionGroup, CreateActionGroupRequest } from './action';
 import { Device } from './device';
 import { Event, EventRegister } from './event';
 import { Exec, ExecApplyRequest } from './exec';
@@ -50,15 +50,27 @@ export type FlexomService = {
 
     /**
      *  Retreive a specific ActionGroup
-     *  @param {string} oid - ActionGroup oid
+     *  @param {string} actionGroupId - Action group object identifier
      */
     getActionGroup: (actionGroupId: string) => Promise<ActionGroup>;
+
+    /**
+     * 	Create an ActionGroup
+     *  @param {CreateActionGroupRequest} request - Create action group request
+     */
+    createActionGroup: (request: CreateActionGroupRequest) => Promise<{ actionGroupOID: string }>;
 
     /**
      * 	Update a specific ActionGroup
      *  @param {ActionGroup} actionGroup - ActionGroup object
      */
     updateActionGroup: (actionGroup: ActionGroup) => Promise<void>;
+
+    /**
+     * 	Create an ActionGroup
+     *  @param {actionGroupId} actionGroupId - Action group object identifier
+     */
+    deleteActionGroup: (actionGroupId: string) => Promise<void>;
 
     /**
      *  Retreive executions history
@@ -88,23 +100,21 @@ export type FlexomService = {
 
     /**
      *  Given a rootPlaceId, a type & label it create a subplace
-     *  @param {string} rootPlaceId - Root place ID
-     *  @param {string} type - Type of the place
-     *  @param {string} label - Name of the sub place
+     *  @param {CreatePlaceRequest} request - create place request
      */
     createPlace: (request: CreatePlaceRequest) => Promise<{ placeOID: string }>;
 
     /**
      *  Update a place name and type
-     *  @param {string} placedOID - place OID
-     * @param {string} label - label
+     *  @param {string} placeId - place object identifier
+     *  @param {string} label - label
      *  @param {string} type - type
      */
     updatePlace: (updatePlaceRequest: UpdatePlaceRequest) => Promise<void>;
 
     /**
      *  Delete a subplace
-     *  @param {string} placedOID - place OID
+     *  @param {string} placeOID - place object identifier
      */
     deletePlace: (placeOID: string) => Promise<void>;
 
@@ -131,7 +141,7 @@ export type FlexomService = {
      *  @param {string} deviceURL
      *  @param {string} placeId
      */
-    relocateDevice: (deviceURL: string, placedId: string) => Promise<void>;
+    relocateDevice: (deviceURL: string, placeId: string) => Promise<void>;
 
     /**
      *  Get dusk time
@@ -152,6 +162,12 @@ export type FlexomService = {
      *  Retrieves the current running commands
      */
     getCurrentExec: () => Promise<Exec[]>;
+
+    /**
+     *  Execute action group
+     *  @param {string} actionGroupId
+     */
+    execActionGroup: (actionGroupId: string) => Promise<{ execId: string }>;
 
     /**
      *  Execute commands

@@ -42,11 +42,11 @@
     },
     "devDependencies": {
         "@types/tough-cookie": "^4.0.2",
-        "prettier": "^2.8.3",
+        "prettier": "^2.8.4",
         "shx": "^0.3.4",
-        "tsup": "^6.5.0",
-        "typescript": "^4.8.2",
-        "vite": "^4.0.4",
-        "vitest": "^0.28.1"
+        "tsup": "^6.6.0",
+        "typescript": "^4.9.5",
+        "vite": "^4.1.1",
+        "vitest": "^0.28.4"
     }
 }

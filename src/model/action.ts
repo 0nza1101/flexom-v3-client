@@ -4,7 +4,7 @@ export interface ActionCommand extends ExecCommand {
     /**
      * Type of the command
      */
-    type: string;
+    type?: string;
 }
 
 export type Action = {
@@ -65,3 +65,21 @@ export type ActionGroup = {
      */
     actions: Action[];
 };
+
+export type CreateActionGroupRequest = {
+    /**
+     * The action group label
+     */
+    label: string;
+
+    /**
+     * Array of the actions
+     */
+    actions: Action[];
+
+    /**
+     * Stringified JSON containing type for icon and is_favorite flag both used by the app
+     */
+    metadata: string;
+
+}

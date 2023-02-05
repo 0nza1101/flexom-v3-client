@@ -1,6 +1,6 @@
 import got, { AfterResponseHook } from 'got';
 import { CookieJar } from 'tough-cookie';
-import { FlexomService, ActionGroup, ExecApplyRequest } from './model';
+import { FlexomService, ActionGroup, ExecApplyRequest, CreateActionGroupRequest } from './model';
 
 /**
  * The API Client Service.
@@ -54,10 +54,18 @@ export function createFlexomService(
     };
 
     const getActionGroup: FlexomService['getActionGroup'] = async (
-        oid: string
+        actionGroupId: string
     ) => {
         return await httpClient
-            .get(`enduser-mobile-web/enduserAPI/actionGroups/${oid}`)
+            .get(`enduser-mobile-web/enduserAPI/actionGroups/${actionGroupId}`)
+            .json();
+    };
+
+    const createActionGroup: FlexomService['createActionGroup'] = async (
+        request: CreateActionGroupRequest
+    ) => {
+        return await httpClient
+            .post('enduser-mobile-web/enduserAPI/actionGroups', { json: request })
             .json();
     };
 
@@ -68,6 +76,14 @@ export function createFlexomService(
             .put(`enduser-mobile-web/enduserAPI/actionGroups`, {
                 json: actionGroup,
             })
+            .json();
+    };
+
+    const deleteActionGroup: FlexomService['deleteActionGroup'] = async (
+        actionGroupId: string
+    ) => {
+        return await httpClient
+            .delete(`enduser-mobile-web/enduserAPI/actionGroups/${actionGroupId}`)
             .json();
     };
 
@@ -148,13 +164,13 @@ export function createFlexomService(
     };
 
     const updatePlace: FlexomService['updatePlace'] = async ({
-        placeOID,
+        placeId,
         type,
         label,
     }) => {
         return await httpClient
             .put(
-                `enduser-mobile-web/enduserAPI/setup/places/${placeOID}`,
+                `enduser-mobile-web/enduserAPI/setup/places/${placeId}`,
                 { json: { type, label } }
             )
             .json();
@@ -240,6 +256,14 @@ export function createFlexomService(
             .json();
     };
 
+    const execActionGroup: FlexomService['execActionGroup'] = async (
+        actionGroupId: string
+    ) => {
+        return await httpClient
+            .post(`enduser-mobile-web/enduserAPI/exec/${actionGroupId}`)
+            .json();
+    };
+
     const applyExec: FlexomService['applyExec'] = async (
         request: ExecApplyRequest
     ) => {
@@ -291,7 +315,10 @@ export function createFlexomService(
         logout,
         registerEvent,
         fetchEvent,
+        createActionGroup,
         updateActionGroup,
+        deleteActionGroup,
         applyExec,
+        execActionGroup
     };
 }

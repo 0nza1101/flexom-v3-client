@@ -2,6 +2,7 @@ import { test, beforeAll, expect } from 'vitest';
 import { createFlexomService } from '../src/service';
 import { FlexomService } from '../src/model/core';
 import { PlaceType } from '../src/model/place';
+import { CreateActionGroupRequest } from '../src';
 
 let service!: FlexomService;
 
@@ -149,9 +150,77 @@ test('get flexom secondary accounts', async () => {
     expect(account).toBeTruthy();
 });
 
-test('get flexom scenarios (action groups)', async () => {
+test('get flexom action groups', async () => {
     const actionGroups = await service.getActionGroups();
     expect(actionGroups).toBeTruthy();
+});
+
+test('create a flexom action group', async () => {
+    const devices = await service.getDevices();
+    const firstLight = devices.find(d => d.controllableName.includes('SwitchOnOffType'))
+    if (firstLight) {
+        const request: CreateActionGroupRequest = {
+            label: `test ${firstLight.label}`,
+            actions: [{
+                deviceURL: firstLight?.deviceURL,
+                commands: [{
+                    name: 'off',
+                    parameters: [],
+                }]
+            }],
+            metadata: '{\"type\":\"lights_on\",\"is_favorite\":false}'
+        }
+        const { actionGroupOID } = await service.createActionGroup(request);
+        const actionGroup = await service.getActionGroup(actionGroupOID);
+        await service.deleteActionGroup(actionGroupOID);
+        expect(actionGroup).toBeTruthy();
+        expect(actionGroup.label).equals(request.label);
+    }
+});
+
+test('delete flexom action group', async () => {
+    const devices = await service.getDevices();
+    const firstLight = devices.find(d => d.controllableName.includes('SwitchOnOffType'))
+    if (firstLight) {
+        const request: CreateActionGroupRequest = {
+            label: `test ${firstLight.label}`,
+            actions: [{
+                deviceURL: firstLight?.deviceURL,
+                commands: [{
+                    name: 'off',
+                    parameters: [],
+                }]
+            }],
+            metadata: '{\"type\":\"lights_on\",\"is_favorite\":false}'
+        }
+        const { actionGroupOID } = await service.createActionGroup(request);
+        await service.deleteActionGroup(actionGroupOID);
+        const actionGroups = await service.getActionGroups();
+        const actionGroup = actionGroups.find(a => a.oid === actionGroupOID)
+        expect(actionGroup).toBeFalsy();
+    }
+});
+
+test('execute flexom action group', async () => {
+    const devices = await service.getDevices();
+    const firstLight = devices.find(d => d.controllableName.includes('SwitchOnOffType'))
+    if (firstLight) {
+        const request: CreateActionGroupRequest = {
+            label: `test ${firstLight.label}`,
+            actions: [{
+                deviceURL: firstLight?.deviceURL,
+                commands: [{
+                    name: 'off',
+                    parameters: [],
+                }]
+            }],
+            metadata: '{\"type\":\"lights_on\",\"is_favorite\":false}'
+        }
+        const { actionGroupOID } = await service.createActionGroup(request);
+        const { execId } = await service.execActionGroup(actionGroupOID);
+        await service.deleteActionGroup(actionGroupOID);
+        expect(execId).toBeTruthy();
+    }
 });
 
 test('get flexom history', async () => {
@@ -161,7 +230,7 @@ test('get flexom history', async () => {
 
 test('get flexom current exec', async () => {
     const exec = await service.getCurrentExec();
-    expect(exec).empty;
+    expect(exec).toBeTruthy();
 });
 
 test('register flexom event', async () => {
