@@ -1,6 +1,6 @@
 import got from 'got';
-import { FlexomService } from './model';
-import { createFlexomService } from './service';
+import { FlexomService } from './model/index.js';
+import { createFlexomService } from './service.js';
 
 export type FlexomClient = Omit<FlexomService, 'logout' | 'login'> & {
     /**
@@ -26,7 +26,7 @@ export function createFlexomClient(
     password: string
 ): FlexomClient {
     const service = createFlexomService([
-        async (response, retryWithMergedOptions) => {
+        async (response: { statusCode: number; }, retryWithMergedOptions: (arg0: any) => any) => {
             if (response.statusCode === 401) {
                 await service.logout();
                 await service.login(username, password);
@@ -70,4 +70,4 @@ export function createFlexomClient(
     };
 }
 
-export * from './model';
+export * from './model/index.js';

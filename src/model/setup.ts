@@ -1,6 +1,6 @@
-import { Device } from './device';
-import { Gateway } from './gateway';
-import { Place } from './place';
+import { Device } from './device.js';
+import { Gateway } from './gateway.js';
+import { Place } from './place.js';
 
 export type Setup = {
     /**

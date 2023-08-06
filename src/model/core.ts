@@ -4,14 +4,14 @@ import {
     Preference,
     SecondaryAccount,
     History,
-} from './account';
-import { ActionGroup, CreateActionGroupRequest } from './action';
-import { Device } from './device';
-import { Event, EventRegister } from './event';
-import { Exec, ExecApplyRequest } from './exec';
-import { Gateway } from './gateway';
-import { Place, CreatePlaceRequest, UpdatePlaceRequest } from './place';
-import { Setup, ThirdPartyActivated, Timezone } from './setup';
+} from './account.js';
+import { ActionGroup, CreateActionGroupRequest } from './action.js';
+import { Device } from './device.js';
+import { Event, EventRegister } from './event.js';
+import { Exec, ExecApplyRequest } from './exec.js';
+import { Gateway } from './gateway.js';
+import { Place, CreatePlaceRequest, UpdatePlaceRequest } from './place.js';
+import { Setup, ThirdPartyActivated, Timezone } from './setup.js';
 
 export type FlexomService = {
     /**

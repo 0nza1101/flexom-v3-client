@@ -1,8 +1,8 @@
 import { test, beforeAll, expect } from 'vitest';
-import { createFlexomService } from '../src/service';
-import { FlexomService } from '../src/model/core';
-import { PlaceType } from '../src/model/place';
-import { CreateActionGroupRequest } from '../src';
+import { createFlexomService } from '../src/service.js';
+import { FlexomService } from '../src/model/core.js';
+import { PlaceType } from '../src/model/place.js';
+import { CreateActionGroupRequest } from '../src/index.js';
 
 let service!: FlexomService;
 

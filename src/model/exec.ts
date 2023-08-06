@@ -1,4 +1,4 @@
-import { ActionGroup } from "./action";
+import { ActionGroup } from "./action.js";
 
 
 export type ExecState =

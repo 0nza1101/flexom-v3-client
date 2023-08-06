@@ -1,4 +1,4 @@
-import { ExecHistory } from "./exec";
+import { ExecHistory } from "./exec.js";
 
 export type Role = {
     /**

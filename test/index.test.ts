@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest';
-import { createFlexomClient } from '../src';
+import { createFlexomClient } from '../src/index.js';
 
 test('create Flexom v3 client', () => {
     const client = createFlexomClient(

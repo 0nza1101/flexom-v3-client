@@ -1,6 +1,6 @@
 import got, { AfterResponseHook } from 'got';
 import { CookieJar } from 'tough-cookie';
-import { FlexomService, ActionGroup, ExecApplyRequest, CreateActionGroupRequest } from './model';
+import { FlexomService, ActionGroup, ExecApplyRequest, CreateActionGroupRequest } from './model/index.js';
 
 /**
  * The API Client Service.

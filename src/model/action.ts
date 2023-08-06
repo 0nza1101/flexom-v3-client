@@ -1,4 +1,4 @@
-import { ExecCommand } from "./exec";
+import { ExecCommand } from "./exec.js";
 
 export interface ActionCommand extends ExecCommand {
     /**
