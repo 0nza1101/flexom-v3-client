@@ -1,0 +1,338 @@
+[
+  {
+    "creationTime": 1640088017000,
+    "lastUpdateTime": 1640088017000,
+    "label": "Noir complet",
+    "metadata": "{\"type\":\"sleep\",\"is_favorite\":false}",
+    "shortcut": false,
+    "notificationTypeMask": 0,
+    "notificationCondition": "NEVER",
+    "actions": [
+      {
+        "deviceURL": "enocean://1005-1183-7399/93456874#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93456874#2",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93523938#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93523938#2",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93526807#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93526807#2",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93526810#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93526810#2",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/11270697",
+        "commands": [
+          {
+            "type": 1,
+            "name": "close",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/16547787",
+        "commands": [
+          {
+            "type": 1,
+            "name": "close",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/4821900",
+        "commands": [
+          {
+            "type": 1,
+            "name": "close",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/7375395",
+        "commands": [
+          {
+            "type": 1,
+            "name": "close",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "ovp://1005-1183-7399/7835279#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "setManuAndSetPointModes",
+            "parameters": ["comfort"]
+          }
+        ]
+      }
+    ],
+    "oid": "326a4808-b682-4fc4-9558-6c99554532b1"
+  },
+  {
+    "creationTime": 1634383502000,
+    "lastUpdateTime": 1639137430000,
+    "label": "Debout !",
+    "metadata": "{\"type\":\"morning\",\"is_favorite\":false}",
+    "shortcut": false,
+    "notificationTypeMask": 0,
+    "notificationCondition": "NEVER",
+    "actions": [
+      {
+        "deviceURL": "ovp://1005-1183-7399/7835279#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "setManuAndSetPointModes",
+            "parameters": ["eco"]
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/11270697",
+        "commands": [
+          {
+            "type": 1,
+            "name": "open",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/16547787",
+        "commands": [
+          {
+            "type": 1,
+            "name": "open",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/7375395",
+        "commands": [
+          {
+            "type": 1,
+            "name": "open",
+            "parameters": []
+          }
+        ]
+      }
+    ],
+    "oid": "499c924f-202e-44dd-9cff-f42d684a3f3e"
+  },
+  {
+    "creationTime": 1634339182000,
+    "lastUpdateTime": 1645389646000,
+    "label": "Au lit ! ",
+    "metadata": "{\"type\":\"sleep\",\"is_favorite\":true}",
+    "shortcut": false,
+    "notificationTypeMask": 0,
+    "notificationCondition": "NEVER",
+    "actions": [
+      {
+        "deviceURL": "enocean://1005-1183-7399/93456874#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93523938#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93526807#2",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93526807#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93523938#2",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93526810#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93526810#2",
+        "commands": [
+          {
+            "type": 1,
+            "name": "off",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "ovp://1005-1183-7399/7835279#1",
+        "commands": [
+          {
+            "type": 1,
+            "name": "setManuAndSetPointModes",
+            "parameters": ["eco"]
+          }
+        ]
+      },
+      {
+        "deviceURL": "enocean://1005-1183-7399/93456874#2",
+        "commands": [
+          {
+            "type": 1,
+            "name": "on",
+            "parameters": []
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/4821900",
+        "commands": [
+          {
+            "type": 1,
+            "name": "setClosure",
+            "parameters": [85]
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/16547787",
+        "commands": [
+          {
+            "type": 1,
+            "name": "setClosure",
+            "parameters": [80]
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/7375395",
+        "commands": [
+          {
+            "type": 1,
+            "name": "setClosure",
+            "parameters": [80]
+          }
+        ]
+      },
+      {
+        "deviceURL": "io://1005-1183-7399/11270697",
+        "commands": [
+          {
+            "type": 1,
+            "name": "setClosure",
+            "parameters": [80]
+          }
+        ]
+      }
+    ],
+    "oid": "7939c3ff-3416-4456-b349-9154d1ed9918"
+  }
+]

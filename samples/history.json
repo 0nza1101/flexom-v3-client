@@ -1,0 +1,1357 @@
+[
+    {
+        "execution": {
+            "eventTime": 1675019451535,
+            "actionGroupOID": "f90f15cc-f1e5-4f71-80b8-0bf1993b97c5",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b20cc17f84e",
+            "source": "trigger:gateway",
+            "endTime": 1675019472968,
+            "effectiveStartTime": 1675019451535,
+            "duration": 21433,
+            "id": "4caa06d7-28ff-48e8-92e1-67f9459a0007",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B1\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1675012401025,
+            "actionGroupOID": "a6b58fa8-7234-4411-b575-0137aaebe80a",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/16547787",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 2,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "io://1005-1183-7399/7375395",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 1,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "trigger:eb6db0c9-d9b6-8679-67ba-3b2060e524cd",
+            "source": "trigger:gateway",
+            "endTime": 1675012418165,
+            "effectiveStartTime": 1675012401025,
+            "duration": 17140,
+            "id": "b1a7ef74-5385-46d1-b07c-31537a21cc16",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3807732\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6db0c6-d9b6-8679-67ba-3b207de94213\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "io://1005-1183-7399/7375395",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 1,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "io://1005-1183-7399/16547787",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 2,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1675001580572,
+            "actionGroupOID": "72de07f3-2698-4672-9f17-409ea7d7da8b",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                },
+                {
+                    "deviceURL": "io://1005-1183-7399/7375395",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 1,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                },
+                {
+                    "deviceURL": "io://1005-1183-7399/16547787",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 2,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6e8ef1-d9b6-8679-67ba-3b200da5ddc2",
+            "source": "trigger:gateway",
+            "endTime": 1675001594998,
+            "effectiveStartTime": 1675001580572,
+            "duration": 14426,
+            "id": "2a720f89-6814-46ea-bb23-a7b85a7c00c4",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865464\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B1\",\"setupTriggerId\":\"eb6e8eec-d9b6-8679-67ba-3b205fffee58\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                },
+                {
+                    "deviceURL": "io://1005-1183-7399/7375395",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 1,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                },
+                {
+                    "deviceURL": "io://1005-1183-7399/16547787",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 2,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1675001562298,
+            "actionGroupOID": "1c2a1f9b-8ada-447d-b327-10d4e47c90bf",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b2033de4ef2",
+            "source": "trigger:gateway",
+            "endTime": 1675001583200,
+            "effectiveStartTime": 1675001562298,
+            "duration": 20902,
+            "id": "bc528526-16d0-405f-8a93-34b4d389343e",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674929740516,
+            "actionGroupOID": "f90f15cc-f1e5-4f71-80b8-0bf1993b97c5",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b20cc17f84e",
+            "source": "trigger:gateway",
+            "endTime": 1674929758276,
+            "effectiveStartTime": 1674929740516,
+            "duration": 17760,
+            "id": "fad5413d-fc79-4f32-b8d7-c9701c91e460",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B1\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674911469480,
+            "actionGroupOID": "79b0a57c-2dee-4c1f-a3c6-0a086666746f",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "trigger:eb6b9aa5-d9b6-8679-67ba-3b20a6eba5fd",
+            "source": "trigger:gateway",
+            "endTime": 1674911486478,
+            "effectiveStartTime": 1674911469480,
+            "duration": 16998,
+            "id": "060b8ff7-51eb-409d-92e8-031e6a140b29",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865476\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6b9aa2-d9b6-8679-67ba-3b20a168fed1\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674906888568,
+            "actionGroupOID": "79b0a57c-2dee-4c1f-a3c6-0a086666746f",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6b9aa5-d9b6-8679-67ba-3b20a6eba5fd",
+            "source": "trigger:gateway",
+            "endTime": 1674906892826,
+            "effectiveStartTime": 1674906888568,
+            "duration": 4258,
+            "id": "061414f9-1333-44ff-b48b-327b15fd6546",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865476\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6b9aa2-d9b6-8679-67ba-3b20a168fed1\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674854584608,
+            "actionGroupOID": "f90f15cc-f1e5-4f71-80b8-0bf1993b97c5",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b20cc17f84e",
+            "source": "trigger:gateway",
+            "endTime": 1674854603024,
+            "effectiveStartTime": 1674854584608,
+            "duration": 18416,
+            "id": "931572c2-f777-45b4-8721-343ac6b23f07",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B1\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674823875595,
+            "actionGroupOID": "1c2a1f9b-8ada-447d-b327-10d4e47c90bf",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b2033de4ef2",
+            "source": "trigger:gateway",
+            "endTime": 1674823901844,
+            "effectiveStartTime": 1674823875595,
+            "duration": 26249,
+            "id": "ba2073ba-51dc-4ce7-accc-f0d1d1a82e2e",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674770271015,
+            "actionGroupOID": "960d51c4-e8df-44f4-abd8-55485f7a260c",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6b9aa6-d9b6-8679-67ba-3b20520d8bda",
+            "source": "trigger:gateway",
+            "endTime": 1674770293738,
+            "effectiveStartTime": 1674770271015,
+            "duration": 22723,
+            "id": "fc710718-0fc8-4d0e-8924-35d49a87fd51",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865476\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B1\",\"setupTriggerId\":\"eb6b9aa2-d9b6-8679-67ba-3b20a168fed1\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674766141495,
+            "commandLogs": [
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526807#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 4,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93523938#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 2,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526810#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 7,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526810#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 6,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526807#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 5,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93456874#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93456874#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 1,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93523938#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 3,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "jordan.nijean@gmail.com",
+            "source": "mobile",
+            "endTime": 1674766143322,
+            "effectiveStartTime": 1674766141495,
+            "duration": 1827,
+            "id": "efd7482b-d9b6-8679-36e1-d71ceb4ffd93",
+            "label": "Tout éteindre",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93456874#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93456874#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 1,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93523938#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 2,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93523938#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 3,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526807#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 4,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526807#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 5,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526810#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 6,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526810#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 7,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674741529188,
+            "actionGroupOID": "1c2a1f9b-8ada-447d-b327-10d4e47c90bf",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b2033de4ef2",
+            "source": "trigger:gateway",
+            "endTime": 1674741557737,
+            "effectiveStartTime": 1674741529188,
+            "duration": 28549,
+            "id": "9d7aa1e4-a99a-4eae-a1e0-b3fb8a53e208",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674681269895,
+            "actionGroupOID": "1c2a1f9b-8ada-447d-b327-10d4e47c90bf",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b2033de4ef2",
+            "source": "trigger:gateway",
+            "endTime": 1674681272719,
+            "effectiveStartTime": 1674681269895,
+            "duration": 2824,
+            "id": "dd39c728-dd4a-47ce-bd5b-048f43033b00",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674681243120,
+            "actionGroupOID": "f90f15cc-f1e5-4f71-80b8-0bf1993b97c5",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b20cc17f84e",
+            "source": "trigger:gateway",
+            "endTime": 1674681269898,
+            "effectiveStartTime": 1674681243120,
+            "duration": 26778,
+            "id": "3c4781a0-71a6-48bb-ad7a-31187001f544",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B1\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674680812006,
+            "actionGroupOID": "1c2a1f9b-8ada-447d-b327-10d4e47c90bf",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b2033de4ef2",
+            "source": "trigger:gateway",
+            "endTime": 1674680817045,
+            "effectiveStartTime": 1674680812006,
+            "duration": 5039,
+            "id": "47ea6b9f-33b3-4d37-890f-997d63acb511",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674680810611,
+            "actionGroupOID": "f90f15cc-f1e5-4f71-80b8-0bf1993b97c5",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b20cc17f84e",
+            "source": "trigger:gateway",
+            "endTime": 1674680812009,
+            "effectiveStartTime": 1674680810611,
+            "duration": 1398,
+            "id": "9ba2661d-7bf8-472f-8c84-71d060fffca7",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B1\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674657049429,
+            "actionGroupOID": "1c2a1f9b-8ada-447d-b327-10d4e47c90bf",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "trigger:eb6a72a8-d9b6-8679-67ba-3b2033de4ef2",
+            "source": "trigger:gateway",
+            "endTime": 1674657074669,
+            "effectiveStartTime": 1674657049429,
+            "duration": 25240,
+            "id": "4e54f118-6cba-4ecc-a18e-72496f0bf2cc",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865462\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B0\",\"setupTriggerId\":\"eb6a72a5-d9b6-8679-67ba-3b205ec36410\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674505766520,
+            "actionGroupOID": "960d51c4-e8df-44f4-abd8-55485f7a260c",
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "owner": "trigger:eb6b9aa6-d9b6-8679-67ba-3b20520d8bda",
+            "source": "trigger:gateway",
+            "endTime": 1674505771615,
+            "effectiveStartTime": 1674505766520,
+            "duration": 5095,
+            "id": "902cf62c-0ffd-4903-8e7c-2203f52fc96d",
+            "metaData": "{\"deviceURL\":\"enocean://1005-1183-7399/3865476\",\"stateName\":\"core:RockerSwitchx2State\",\"targetValue\":\"B1\",\"setupTriggerId\":\"eb6b9aa2-d9b6-8679-67ba-3b20a168fed1\"}",
+            "type": "Raw trigger (Gateway) - DISCRETE_TRIGGER_USER",
+            "failureType": "CMDCANCELLED",
+            "state": "FAILED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/4821900",
+                    "command": "close",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "CMDCANCELLED",
+                    "state": "FAILED"
+                }
+            ],
+            "executionType": "Raw trigger (Gateway)",
+            "executionSubType": "DISCRETE_TRIGGER_USER"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674492064357,
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "anonymous@gmail.com",
+            "source": "mobile",
+            "endTime": 1674492064955,
+            "effectiveStartTime": 1674492064357,
+            "duration": 598,
+            "id": "df813261-d9b6-8679-36e1-d71cf19761a0",
+            "label": "Fermer à 0",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674492043177,
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "anonymous@gmail.com",
+            "source": "mobile",
+            "endTime": 1674492062406,
+            "effectiveStartTime": 1674492043177,
+            "duration": 19229,
+            "id": "df80dfa5-d9b6-8679-36e1-d71c9b4a5a12",
+            "label": "Fermer à 0",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674492039629,
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/7375395",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "anonymous@gmail.com",
+            "source": "mobile",
+            "endTime": 1674492058844,
+            "effectiveStartTime": 1674492039629,
+            "duration": 19215,
+            "id": "df80d1c8-d9b6-8679-36e1-d71c53181ef5",
+            "label": "Fermer à 0",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/7375395",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674492034598,
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/16547787",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "anonymous@gmail.com",
+            "source": "mobile",
+            "endTime": 1674492053794,
+            "effectiveStartTime": 1674492034598,
+            "duration": 19196,
+            "id": "df80be21-d9b6-8679-36e1-d71cbf637eac",
+            "label": "Fermer à 0",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/16547787",
+                    "command": "open",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674472372496,
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "setClosure",
+                    "parameters": [60],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "anonymous@gmail.com",
+            "source": "mobile",
+            "endTime": 1674472389487,
+            "effectiveStartTime": 1674472372496,
+            "duration": 16991,
+            "id": "de54b90c-d9b6-8679-36e1-d71ca2b4bbdf",
+            "label": "Fermer à 60",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/11270697",
+                    "command": "setClosure",
+                    "parameters": [60],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674472367183,
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/7375395",
+                    "command": "setClosure",
+                    "parameters": [60],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "anonymous@gmail.com",
+            "source": "mobile",
+            "endTime": 1674472385357,
+            "effectiveStartTime": 1674472367184,
+            "duration": 18173,
+            "id": "de54a44c-d9b6-8679-36e1-d71cd4864f09",
+            "label": "Fermer à 60",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/7375395",
+                    "command": "setClosure",
+                    "parameters": [60],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674472359161,
+            "commandLogs": [
+                {
+                    "deviceURL": "io://1005-1183-7399/16547787",
+                    "command": "setClosure",
+                    "parameters": [70],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "anonymous@gmail.com",
+            "source": "mobile",
+            "endTime": 1674472376148,
+            "effectiveStartTime": 1674472359161,
+            "duration": 16987,
+            "id": "de5484f4-d9b6-8679-36e1-d71c88e8f9bd",
+            "label": "Fermer à 70",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "io://1005-1183-7399/16547787",
+                    "command": "setClosure",
+                    "parameters": [70],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    },
+    {
+        "execution": {
+            "eventTime": 1674472350750,
+            "commandLogs": [
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93456874#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526807#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 4,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526810#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 6,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93456874#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 1,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526807#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 5,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526810#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 7,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93523938#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 3,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93523938#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 2,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "owner": "anonymous@gmail.com",
+            "source": "mobile",
+            "endTime": 1674472351484,
+            "effectiveStartTime": 1674472350751,
+            "duration": 733,
+            "id": "de546413-d9b6-8679-36e1-d71c09dda0ae",
+            "label": "Tout éteindre",
+            "type": "Immediate execution - MANUAL_CONTROL",
+            "failureType": "NO_FAILURE",
+            "state": "COMPLETED",
+            "commands": [
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93456874#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 0,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93456874#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 1,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93523938#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 2,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93523938#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 3,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526807#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 4,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526807#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 5,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526810#1",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 6,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                },
+                {
+                    "deviceURL": "enocean://1005-1183-7399/93526810#2",
+                    "command": "off",
+                    "parameters": [],
+                    "rank": 7,
+                    "dynamic": false,
+                    "failureType": "NO_FAILURE",
+                    "state": "COMPLETED"
+                }
+            ],
+            "executionType": "Immediate execution",
+            "executionSubType": "MANUAL_CONTROL"
+        }
+    }
+]
