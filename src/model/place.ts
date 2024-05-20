@@ -66,12 +66,12 @@ export type UpdatePlaceRequest = {
     placeId: string;
 
     /**
-    * The updated label of the place
-    */
+     * The updated label of the place
+     */
     label: string;
 
     /**
      * String representation of {@link PlaceType} value
      */
     type: string;
-}
+};

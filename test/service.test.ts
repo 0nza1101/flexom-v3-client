@@ -13,7 +13,7 @@ beforeAll(async () => {
 test('does login', async () => {
     const auth = await service.login(
         process.env.FLEXOM_USERNAME!,
-        process.env.FLEXOM_PASSWORD!
+        process.env.FLEXOM_PASSWORD!,
     );
     expect(auth.success).toBeTruthy();
 });
@@ -64,7 +64,7 @@ test('update a flexom place', async () => {
     await service.updatePlace({
         placeId: newPlaceId,
         type: PlaceType.APARTMENT.toString(),
-        label: 'new updated place'
+        label: 'new updated place',
     });
     places = await service.getPlaces();
     const updatedPlace = places.subPlaces.find((p) => p.oid === newPlaceId);
@@ -157,19 +157,25 @@ test('get flexom action groups', async () => {
 
 test('create a flexom action group', async () => {
     const devices = await service.getDevices();
-    const firstLight = devices.find(d => d.controllableName.includes('SwitchOnOffType'))
+    const firstLight = devices.find((d) =>
+        d.controllableName.includes('SwitchOnOffType'),
+    );
     if (firstLight) {
         const request: CreateActionGroupRequest = {
             label: `test ${firstLight.label}`,
-            actions: [{
-                deviceURL: firstLight?.deviceURL,
-                commands: [{
-                    name: 'off',
-                    parameters: [],
-                }]
-            }],
-            metadata: '{\"type\":\"lights_on\",\"is_favorite\":false}'
-        }
+            actions: [
+                {
+                    deviceURL: firstLight?.deviceURL,
+                    commands: [
+                        {
+                            name: 'off',
+                            parameters: [],
+                        },
+                    ],
+                },
+            ],
+            metadata: '{"type":"lights_on","is_favorite":false}',
+        };
         const { actionGroupOID } = await service.createActionGroup(request);
         const actionGroup = await service.getActionGroup(actionGroupOID);
         await service.deleteActionGroup(actionGroupOID);
@@ -180,42 +186,54 @@ test('create a flexom action group', async () => {
 
 test('delete flexom action group', async () => {
     const devices = await service.getDevices();
-    const firstLight = devices.find(d => d.controllableName.includes('SwitchOnOffType'))
+    const firstLight = devices.find((d) =>
+        d.controllableName.includes('SwitchOnOffType'),
+    );
     if (firstLight) {
         const request: CreateActionGroupRequest = {
             label: `test ${firstLight.label}`,
-            actions: [{
-                deviceURL: firstLight?.deviceURL,
-                commands: [{
-                    name: 'off',
-                    parameters: [],
-                }]
-            }],
-            metadata: '{\"type\":\"lights_on\",\"is_favorite\":false}'
-        }
+            actions: [
+                {
+                    deviceURL: firstLight?.deviceURL,
+                    commands: [
+                        {
+                            name: 'off',
+                            parameters: [],
+                        },
+                    ],
+                },
+            ],
+            metadata: '{"type":"lights_on","is_favorite":false}',
+        };
         const { actionGroupOID } = await service.createActionGroup(request);
         await service.deleteActionGroup(actionGroupOID);
         const actionGroups = await service.getActionGroups();
-        const actionGroup = actionGroups.find(a => a.oid === actionGroupOID)
+        const actionGroup = actionGroups.find((a) => a.oid === actionGroupOID);
         expect(actionGroup).toBeFalsy();
     }
 });
 
 test('execute flexom action group', async () => {
     const devices = await service.getDevices();
-    const firstLight = devices.find(d => d.controllableName.includes('SwitchOnOffType'))
+    const firstLight = devices.find((d) =>
+        d.controllableName.includes('SwitchOnOffType'),
+    );
     if (firstLight) {
         const request: CreateActionGroupRequest = {
             label: `test ${firstLight.label}`,
-            actions: [{
-                deviceURL: firstLight?.deviceURL,
-                commands: [{
-                    name: 'off',
-                    parameters: [],
-                }]
-            }],
-            metadata: '{\"type\":\"lights_on\",\"is_favorite\":false}'
-        }
+            actions: [
+                {
+                    deviceURL: firstLight?.deviceURL,
+                    commands: [
+                        {
+                            name: 'off',
+                            parameters: [],
+                        },
+                    ],
+                },
+            ],
+            metadata: '{"type":"lights_on","is_favorite":false}',
+        };
         const { actionGroupOID } = await service.createActionGroup(request);
         const { execId } = await service.execActionGroup(actionGroupOID);
         await service.deleteActionGroup(actionGroupOID);

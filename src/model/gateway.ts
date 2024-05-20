@@ -24,7 +24,7 @@ export type Connectivity = {
      * The protocol version
      */
     protocolVersion: string;
-}
+};
 
 export type Partner = {
     /**
@@ -46,7 +46,7 @@ export type Partner = {
      * Partner status
      */
     status: string;
-}
+};
 
 export type Gateway = {
     /**

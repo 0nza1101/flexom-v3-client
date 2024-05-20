@@ -1,5 +1,4 @@
-import { ActionGroup } from "./action.js";
-
+import { ActionGroup } from './action.js';
 
 export type ExecState =
     | 'INITIALIZED'
@@ -12,177 +11,180 @@ export type ExecState =
     | 'QUEUED_GATEWAY_SIDE'
     | 'UNKNOWN';
 
-export type ExecSubType = 'MANUAL_CONTROL' | 'DISCRETE_TRIGGER_USER' | 'TIME_TRIGGER' | 'IFT_CONDITION';
+export type ExecSubType =
+    | 'MANUAL_CONTROL'
+    | 'DISCRETE_TRIGGER_USER'
+    | 'TIME_TRIGGER'
+    | 'IFT_CONDITION';
 
 export type Exec = {
     /**
-    * The execution start time
-    */
+     * The execution start time
+     */
     startTime: number;
 
     /**
-    * The execution owner
-    */
+     * The execution owner
+     */
     owner: string;
 
     /**
-    * The execution ID
-    */
+     * The execution ID
+     */
     id: string;
 
     /**
-    * The execution description
-    */
+     * The execution description
+     */
     description: string;
 
     /**
-    * The execution action group
-    */
+     * The execution action group
+     */
     actionGroup: ActionGroup;
 
     /**
-    * The execution state
-    */
+     * The execution state
+     */
     state: ExecState;
 
     /**
-    * The execution type
-    */
+     * The execution type
+     */
     executionType: string;
 
     /**
-    * The execution sub type
-    */
+     * The execution sub type
+     */
     executionSubType: ExecSubType;
 };
 
 export type ExecCommand = {
     /**
-    * The execution command name
-    */
+     * The execution command name
+     */
     name: string;
 
     /**
-    * The execution command parameters
-    */
+     * The execution command parameters
+     */
     parameters: string[];
 };
 
 export type ExecAction = {
     /**
-    * An array of commands to execute
-    */
+     * An array of commands to execute
+     */
     commands: ExecCommand[];
 
     /**
-    * The deviceURL
-    */
+     * The deviceURL
+     */
     deviceURL: string;
 };
 
 export type ExecApplyRequest = {
     /**
-    * The label of the execution command
-    */
+     * The label of the execution command
+     */
     label: string;
 
     /**
-    * An array of actions to execute
-    */
+     * An array of actions to execute
+     */
     actions: ExecAction[];
 };
 
-
 export interface ExecHistory extends Omit<Exec, 'description' & 'actionGroup'> {
     /**
-    * The time at which the execution occured
-    */
+     * The time at which the execution occured
+     */
     eventTime: number;
 
     /**
-    * Action group object identifier
-    */
+     * Action group object identifier
+     */
     actionGroupOID: string;
 
     /**
-    * The time at which the execution ended
-    */
+     * The time at which the execution ended
+     */
     endTime: number;
 
     /**
-    * The effective time at which the execution occured
-    */
+     * The effective time at which the execution occured
+     */
     effectiveStartTime: number;
 
     /**
-    * Duration of the execution
-    */
+     * Duration of the execution
+     */
     duration: number;
 
     /**
-    * Label of the execution
-    */
+     * Label of the execution
+     */
     label: string;
 
     /**
-    * Type of the execution, concatenation of executionType and executionSubType
-    */
+     * Type of the execution, concatenation of executionType and executionSubType
+     */
     type: string;
 
     /**
-    * The failure type  // TODO: More detailed type (NO_FAILURE)
-    */
+     * The failure type  // TODO: More detailed type (NO_FAILURE)
+     */
     failureType: string;
 
     /**
-    * Metadata
-    */
+     * Metadata
+     */
     metaData: string;
 
     /**
-    * An array of the commands, basically the same as the commands array
-    */
+     * An array of the commands, basically the same as the commands array
+     */
     commandLogs: ExecHistoryCommand[];
 
     /**
-    * An array of the commands
-    */
+     * An array of the commands
+     */
     commands: ExecHistoryCommand[];
-};
+}
 
 export type ExecHistoryCommand = {
     /**
-    * DeviceURL
-    */
+     * DeviceURL
+     */
     deviceURL: string;
 
     /**
-    * The command name
-    */
+     * The command name
+     */
     command: string;
 
     /**
-    * An array of parameters
-    */
+     * An array of parameters
+     */
     parameters: string[];
 
     /**
-    * Unknown
-    */
+     * Unknown
+     */
     rank: number;
 
     /**
-    * Unknown
-    */
+     * Unknown
+     */
     dynamic: false;
 
     /**
-    * The execution command state
-    */
+     * The execution command state
+     */
     state: ExecState;
 
     /**
-    * The failure type
-    */
+     * The failure type
+     */
     failureType: string;
-}
+};

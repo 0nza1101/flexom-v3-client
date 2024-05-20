@@ -1,4 +1,4 @@
-import { ExecCommand } from "./exec.js";
+import { ExecCommand } from './exec.js';
 
 export interface ActionCommand extends ExecCommand {
     /**
@@ -81,5 +81,4 @@ export type CreateActionGroupRequest = {
      * Stringified JSON containing type for icon and is_favorite flag both used by the app
      */
     metadata: string;
-
-}
+};

@@ -111,7 +111,7 @@ export type Location = {
     duskOffset: number;
 };
 
-export type TwilightAngle = 'CIVIL' | 'NAUTICAL' | 'ASTRONOMICAL'
+export type TwilightAngle = 'CIVIL' | 'NAUTICAL' | 'ASTRONOMICAL';
 
 export type Timezone = {
     hours: number;

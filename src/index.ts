@@ -23,10 +23,13 @@ export type FlexomClient = Omit<FlexomService, 'logout' | 'login'> & {
 
 export function createFlexomClient(
     username: string,
-    password: string
+    password: string,
 ): FlexomClient {
     const service = createFlexomService([
-        async (response: { statusCode: number; }, retryWithMergedOptions: (arg0: any) => any) => {
+        async (
+            response: { statusCode: number },
+            retryWithMergedOptions: (arg0: any) => any,
+        ) => {
             if (response.statusCode === 401) {
                 await service.logout();
                 await service.login(username, password);

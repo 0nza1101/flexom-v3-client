@@ -1,11 +1,11 @@
-import { ExecHistory } from "./exec.js";
+import { ExecHistory } from './exec.js';
 
 export type Role = {
     /**
-    * The role name
-    */
+     * The role name
+     */
     name: string;
-}
+};
 
 export type Authorization = {
     /**
@@ -14,8 +14,8 @@ export type Authorization = {
     success: boolean;
 
     /**
-    * An array of all available roles for the user
-    */
+     * An array of all available roles for the user
+     */
     roles: Role[];
 };
 
@@ -66,32 +66,32 @@ export type BaseAccount = {
     locale: string;
 
     /**
-    * If the user has accepted the commercial mail agreement
-    */
+     * If the user has accepted the commercial mail agreement
+     */
     commercialMailAgreement: boolean;
 
     /**
-    * If the user account is a technical account
-    */
+     * If the user account is a technical account
+     */
     technicalAccount: boolean;
 };
 
 export interface Account extends BaseAccount {
     /**
-    * If the email has been validated
-    */
+     * If the email has been validated
+     */
     emailValidated: boolean;
 }
 
 export interface SecondaryAccount extends BaseAccount {
     /**
-    * Label of the secondary account
-    */
+     * Label of the secondary account
+     */
     label: string;
 
     /**
-    * Template used to create the secondary account
-    */
+     * Template used to create the secondary account
+     */
     templateName: string;
 }
 
@@ -102,5 +102,5 @@ export type Preference = {
 };
 
 export type History = {
-    execution: ExecHistory
-}
+    execution: ExecHistory;
+};

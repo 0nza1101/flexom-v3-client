@@ -1,6 +1,11 @@
 import got, { AfterResponseHook } from 'got';
 import { CookieJar } from 'tough-cookie';
-import { FlexomService, ActionGroup, ExecApplyRequest, CreateActionGroupRequest } from './model/index.js';
+import {
+    FlexomService,
+    ActionGroup,
+    ExecApplyRequest,
+    CreateActionGroupRequest,
+} from './model/index.js';
 
 /**
  * The API Client Service.
@@ -8,7 +13,7 @@ import { FlexomService, ActionGroup, ExecApplyRequest, CreateActionGroupRequest 
  * @returns {FlexomService}
  */
 export function createFlexomService(
-    afterResponseHook?: AfterResponseHook[]
+    afterResponseHook?: AfterResponseHook[],
 ): FlexomService {
     const cookieJar = new CookieJar();
     const httpClient = got.extend({
@@ -29,7 +34,7 @@ export function createFlexomService(
 
     const login: FlexomService['login'] = async (
         username: string,
-        password: string
+        password: string,
     ) => {
         return await httpClient
             .post('enduser-mobile-web/enduserAPI/login', {
@@ -54,7 +59,7 @@ export function createFlexomService(
     };
 
     const getActionGroup: FlexomService['getActionGroup'] = async (
-        actionGroupId: string
+        actionGroupId: string,
     ) => {
         return await httpClient
             .get(`enduser-mobile-web/enduserAPI/actionGroups/${actionGroupId}`)
@@ -62,15 +67,17 @@ export function createFlexomService(
     };
 
     const createActionGroup: FlexomService['createActionGroup'] = async (
-        request: CreateActionGroupRequest
+        request: CreateActionGroupRequest,
     ) => {
         return await httpClient
-            .post('enduser-mobile-web/enduserAPI/actionGroups', { json: request })
+            .post('enduser-mobile-web/enduserAPI/actionGroups', {
+                json: request,
+            })
             .json();
     };
 
     const updateActionGroup: FlexomService['updateActionGroup'] = async (
-        actionGroup: ActionGroup
+        actionGroup: ActionGroup,
     ) => {
         return await httpClient
             .put(`enduser-mobile-web/enduserAPI/actionGroups`, {
@@ -80,10 +87,12 @@ export function createFlexomService(
     };
 
     const deleteActionGroup: FlexomService['deleteActionGroup'] = async (
-        actionGroupId: string
+        actionGroupId: string,
     ) => {
         return await httpClient
-            .delete(`enduser-mobile-web/enduserAPI/actionGroups/${actionGroupId}`)
+            .delete(
+                `enduser-mobile-web/enduserAPI/actionGroups/${actionGroupId}`,
+            )
             .json();
     };
 
@@ -135,11 +144,11 @@ export function createFlexomService(
     };
 
     const getGatewayVersion: FlexomService['getGatewayVersion'] = async (
-        gatewayId: string
+        gatewayId: string,
     ) => {
         return await httpClient
             .get(
-                `enduser-mobile-web/enduserAPI/setup/gateway/${gatewayId}/version`
+                `enduser-mobile-web/enduserAPI/setup/gateway/${gatewayId}/version`,
             )
             .json();
     };
@@ -158,7 +167,7 @@ export function createFlexomService(
         return await httpClient
             .post(
                 `enduser-mobile-web/enduserAPI/setup/places/${rootPlaceId}/subPlaces`,
-                { json: { type, label } }
+                { json: { type, label } },
             )
             .json();
     };
@@ -169,15 +178,14 @@ export function createFlexomService(
         label,
     }) => {
         return await httpClient
-            .put(
-                `enduser-mobile-web/enduserAPI/setup/places/${placeId}`,
-                { json: { type, label } }
-            )
+            .put(`enduser-mobile-web/enduserAPI/setup/places/${placeId}`, {
+                json: { type, label },
+            })
             .json();
     };
 
     const deletePlace: FlexomService['deletePlace'] = async (
-        placedId: string
+        placedId: string,
     ) => {
         return await httpClient
             .delete(`enduser-mobile-web/enduserAPI/setup/places/${placedId}`)
@@ -194,34 +202,34 @@ export function createFlexomService(
         return await httpClient
             .get(
                 `enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(
-                    deviceURL
-                )}`
+                    deviceURL,
+                )}`,
             )
             .json();
     };
 
     const relocateDevice: FlexomService['relocateDevice'] = async (
         deviceURL: string,
-        placeId: string
+        placeId: string,
     ) => {
         return await httpClient
             .put(
                 `enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(
-                    deviceURL
-                )}/relocate/${placeId}`
+                    deviceURL,
+                )}/relocate/${placeId}`,
             )
             .json();
     };
 
     const renameDevice: FlexomService['renameDevice'] = async (
         deviceURL: string,
-        name: string
+        name: string,
     ) => {
         return await httpClient
             .put(
                 `enduser-mobile-web/enduserAPI/setup/devices/${encodeURIComponent(
-                    deviceURL
-                )}/${name}`
+                    deviceURL,
+                )}/${name}`,
             )
             .json();
     };
@@ -257,7 +265,7 @@ export function createFlexomService(
     };
 
     const execActionGroup: FlexomService['execActionGroup'] = async (
-        actionGroupId: string
+        actionGroupId: string,
     ) => {
         return await httpClient
             .post(`enduser-mobile-web/enduserAPI/exec/${actionGroupId}`)
@@ -265,7 +273,7 @@ export function createFlexomService(
     };
 
     const applyExec: FlexomService['applyExec'] = async (
-        request: ExecApplyRequest
+        request: ExecApplyRequest,
     ) => {
         return await httpClient
             .post('enduser-mobile-web/enduserAPI/exec/apply', { json: request })
@@ -319,6 +327,6 @@ export function createFlexomService(
         updateActionGroup,
         deleteActionGroup,
         applyExec,
-        execActionGroup
+        execActionGroup,
     };
 }

@@ -58,7 +58,9 @@ export type FlexomService = {
      * 	Create an ActionGroup
      *  @param {CreateActionGroupRequest} request - Create action group request
      */
-    createActionGroup: (request: CreateActionGroupRequest) => Promise<{ actionGroupOID: string }>;
+    createActionGroup: (
+        request: CreateActionGroupRequest,
+    ) => Promise<{ actionGroupOID: string }>;
 
     /**
      * 	Update a specific ActionGroup
