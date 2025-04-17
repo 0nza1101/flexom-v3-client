@@ -24,6 +24,9 @@
 <p>
 <br>
 
+> [!WARNING]  
+> The library implements the core functionalities, but since I no longer have access to a Flexom V3 installation, I can’t update it further. If you have access to Flexom V3 and would like to contribute, your help would be greatly appreciated!
+
 ```bash
 npm install @0nza1101/flexom-v3-client --save
 ```
